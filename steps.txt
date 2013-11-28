@@ -1,0 +1,24 @@
+Install Meteor
+1- curl https://install.meteor.com | /bin/sh   
+	-> Install all the files in /usr/local/bin/meteor
+
+Run one default example
+
+1- meteor create --example todos 
+	-> this command move one example to my directory
+2- cd todos
+3- meteor 
+	-> this command run my first application in http://localhost:3000/
+4- Ctrl + C
+	-> stop my application
+
+5- cd..
+6- rm -rf meteor
+	-> delete the current example
+
+Create a new application
+1- meteor create riego
+	-> this command create some files with this name (riego.css, riego.html and riego.js)
+2- add boostrap
+	2.a- mkdir client
+	2.b- 
