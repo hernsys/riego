@@ -10,12 +10,23 @@
 
 <template name="categories">
 	<h2 class="title">Categories</h2>
-	<div id="categories" class="btn-group">
-		{{#each categories}}
-			<div id="categories btn btn-inverse">
+	
+
+	<div id="categories" class="btn-group-xs">
+		{{#if newCat}}
+			<div class="category">
+				<input type="text" id="txtAddCategory">
+			</div>
+		{{else}}
+			<div id="btnAdd">+</div>
+		{{/if}}		
+		{{#each listCategories}}
+			<div id="categories btn btn-default">
 				{{Category}}
 			</div>
+			<div id="btnDelete">-</div>
 		{{/each}}
+		
 	</div>
 
 </template>

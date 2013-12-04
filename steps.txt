@@ -16,9 +16,16 @@ Run one default example
 6- rm -rf meteor
 	-> delete the current example
 
+
+
+
 Create a new application
 1- meteor create riego
 	-> this command create some files with this name (riego.css, riego.html and riego.js)
 2- add boostrap
 	2.a- mkdir client
-	2.b- 
+	2.b- to paste bootstrap library
+
+3- Insert Categories
+	-> listCategories.insert({Category:"Cultivos"})
+	-> listCategories.insert({Category: "Clima"});
