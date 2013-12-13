@@ -3,15 +3,18 @@
 </head>
 
 <body>
-  <div id="container-categories">
-	{{> categories}}  	
+  <div id="biblioteca">
+	  <div id="container-categories">
+		{{> categories}}  	
+	  </div>
+	  <div id="favorite">
+		{{> favorite}}  	
+	  </div>
   </div>
 </body>
 
 <template name="categories">
 	<h2 class="title">Categories</h2>
-	
-
 	<div id="categories" class="btn-group-xs">
 		{{#if newCat}}
 			<div class="category">
@@ -26,9 +29,35 @@
 			</div>
 			<div id="btnDelete">-</div>
 		{{/each}}
-		
 	</div>
+</template>
 
+<template name="favorite">
+	<ul id="lending_favorite">
+		{{#each items}}
+			<li class="lending_item_alert">
+				<button type="button" class="clone delete_item" id="{{Name}">x</button>
+				{{Nombre}}
+				{{#if lendee_editing}}
+					<input	type="text" id="edit_lendee" class="span2 pull-right" value=""/>
+				{{else}}	
+				<div class="lendee pull-right label {{LendClass}}">
+					{{Lendee}}
+				</div>
+				{{/if}}
+			</li>
+		{{#/each}}
+		{{#if favorito_selected}}
+			<li class="alert-success" id="btnAddItem">
+				{{#if favorito_adding}}
+					<input class="span4" id="item_to_add" size="32" type="text">
+				{{/if}}
+			</li>
+		{{/if}}
+
+	</ul>
 </template>
 
 
+
+ 
