@@ -3,7 +3,7 @@
 </head>
 
 <body>
-  <div id="biblioteca">
+  <div id="library">
 	  <div id="container-categories">
 		{{> categories}}  	
 	  </div>
@@ -31,12 +31,11 @@
 		{{/each}}
 	</div>
 </template>
-
 <template name="favorite">
 	<ul id="lending_favorite">
 		{{#each items}}
 			<li class="lending_item_alert">
-				<button type="button" class="clone delete_item" id="{{Name}">x</button>
+				<button type="button" class="close delete_item" id="{{Name}">x</button>
 				{{Nombre}}
 				{{#if lendee_editing}}
 					<input	type="text" id="edit_lendee" class="span2 pull-right" value=""/>
