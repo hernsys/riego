@@ -1,5 +1,7 @@
-//new collection in MongoDB
+//new collections in MongoDB
 listCategories = new Meteor.Collection("ListCategories");
+items = new Meteor.Collection("listItems");
+
 
 if (Meteor.isClient) {
   Template.categories.listCategories = function() {
@@ -35,8 +37,27 @@ if (Meteor.isClient) {
 
   });
 
-  function focusText(){
+  function focusText(i){
+    i.focus();
+    i.select();
+  };
 
-  }
+  Template.favorite.items = function(){
+      if(Session.equals('current_favorite', null)){
+        return null;
+      }else{
+        var cats = favorite.findOne({_id_Session.get('current_favorite')});
+        if(cats&&cats.items){
+          for(var i = 0; i<cats.items.length; i++){
+            var d = cats.items[i]; 
+            d.Lendee = d.LentTo ? d.LentTo : "free"; 
+            d.LendClass = d.LentTo ? "label-important" : "label-success";
+          }
+        }
+        return cats.items;
+      };
+    };
+  };
+
 
 }
